@@ -240,4 +240,23 @@ If we want smoother text, we use cv.LINE_AA as the line type, which applies anti
 # if k == ord('q'):
 #    cv.destroyAllWindows()
 
+'''now about some mouse actions using opencv.'''
+# import numpy as np
+# import cv2 as cv
+
+# # mouse callback function
+# def draw_square(event,x,y,flags,param):
+#     if event == cv.EVENT_LBUTTONDOWN:
+#         cv.rectangle(img,(x-25,y-25),(x+25,y+25),(255,0,0),2)
+
+# # Create a black image, a window and bind the function to window
+# img = np.zeros((600,600,3), np.uint8)
+# cv.namedWindow('image')
+# cv.setMouseCallback('image',draw_square)
+
+# while(1):
+#     cv.imshow('image',img)
+#     if cv.waitKey(20) & 0xFF == 27:
+#         break
+# cv.destroyAllWindows()
 ''''''
