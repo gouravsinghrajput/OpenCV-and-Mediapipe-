@@ -273,56 +273,57 @@ then we run a while(1) loop to keep the window open, and we display the image us
 '''
 
 
-import numpy as np
-import cv2 as cv 
+# import numpy as np
+# import cv2 as cv 
 
-drawing = False # if this is true it means the mouse is pressed.
-mode = True #if this is true, we will draw rectangles and if false we will draw circles.
-ix, iy = -1, -1
+# drawing = False # if this is true it means the mouse is pressed.
+# mode = True #if this is true, we will draw rectangles and if false we will draw circles.
+# ix, iy = -1, -1
 
-def drawing_function(event, x, y, flags, param):
-    global drawing, mode, ix, iy
+# def drawing_function(event, x, y, flags, param):
+#     global drawing, mode, ix, iy
 
-    if event == cv.EVENT_LBUTTONDBLCLK:
-        drawing = True
-        ix, iy = x, y 
+#     if event == cv.EVENT_LBUTTONDBLCLK:
+#         drawing = True
+#         ix, iy = x, y 
    
-    elif event == cv.EVENT_MOUSEMOVE:
-        if drawing == False:
-            if mode == True:
-                cv.rectangle(img, (ix, iy), (x, y), (0, 255, 0), 3)
-            else:
-                cv.circle(img, (x, y), 5, (0, 0, 255), 3)
+#     elif event == cv.EVENT_MOUSEMOVE:
+#         if drawing == False:
+#             if mode == True:
+#                 cv.rectangle(img, (ix, iy), (x, y), (0, 255, 0), 3)
+#             else:
+#                 cv.circle(img, (x, y), 5, (0, 0, 255), 3)
 
-        # elif drawing == False:
-        #     if mode == True:
-        #         cv.rectangle(img, (ix, iy), (x, y), (255, 0, 0), 3)
-        #     else:
-        #           cv.circle(img, (x, y), 5, (0, 0, 255), 3)
+#         # elif drawing == False:
+#         #     if mode == True:
+#         #         cv.rectangle(img, (ix, iy), (x, y), (255, 0, 0), 3)
+#         #     else:
+#         #           cv.circle(img, (x, y), 5, (0, 0, 255), 3)
 
     
-    elif event == cv.EVENT_RBUTTONUP:
-        if drawing == False:
-            if  mode == True:
-                cv.rectangle(img, (ix, iy), (x, y), (0, 0, 255), 3)
-            else:
-                  cv.circle(img, (x, y), 5, (0, 0, 255), 3)
+#     elif event == cv.EVENT_RBUTTONUP:
+#         if drawing == False:
+#             if  mode == True:
+#                 cv.rectangle(img, (ix, iy), (x, y), (0, 0, 255), 3)
+#             else:
+#                   cv.circle(img, (x, y), 5, (0, 0, 255), 3)
 
-img = np.zeros((1000, 1000, 3), np.uint8)
-cv.namedWindow('image')
-cv.setMouseCallback('image', drawing_function)
+# img = np.zeros((1000, 1000, 3), np.uint8)
+# cv.namedWindow('image')
+# cv.setMouseCallback('image', drawing_function)
 
-while(1):
-    cv.imshow('image', img)
-    k = cv.waitKey(1) & 0xFF
-    if k == ord('m'):
-        mode = not mode
-    elif k == 27:
-        break
-cv.destroyAllWindows()
+# while(1):
+#     cv.imshow('image', img)
+#     k = cv.waitKey(1) & 0xFF
+#     if k == ord('m'):
+#         mode = not mode
+#     elif k == 27:
+#         break
+# cv.destroyAllWindows()
               
 
 '''in this  code, we took three events and we drew rectangles and circles acccording to the action which is done,
 write later...'''
                 
+
 
